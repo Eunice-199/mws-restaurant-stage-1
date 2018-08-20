@@ -75,7 +75,7 @@ class DBHelper {
             if (error) {
                 callback(error, null);
             } else {
-                // Filter restaurants to have only given neighborhood
+                /// Filter restaurants to have only given neighborhood
                 const results = restaurants.filter(r => r.neighborhood == neighborhood);
                 callback(null, results);
             }

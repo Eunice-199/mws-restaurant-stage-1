@@ -352,7 +352,7 @@ nav h1 a {
 }
 
 
-/* ====================== Adding layout shift ====================== */
+/** ====================== Adding layout shift ====================== */
 
 #restaurants-list {
     width: 100%;

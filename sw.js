@@ -70,7 +70,7 @@ self.addEventListener('fetch', (event) => {
 self.addEventListener('message', (event) => {
     console.log(event);
 
-    // var messages = JSON.parse(event.data);
+    // /var messages = JSON.parse(event.data);
     if (event.data.action === 'skipWaiting') {
         self.skipWaiting();
     }

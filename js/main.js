@@ -184,7 +184,7 @@ createRestaurantHTML = (restaurant) => {
 }
 
 /**
- * Add markers for current restaurants to the map.
+ *** Add markers for current restaurants to the map.
  */
 addMarkersToMap = (restaurants = self.restaurants) => {
         restaurants.forEach(restaurant => {
