@@ -155,6 +155,53 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 /**
  * Create restaurant HTML.
  */
+<<<<<<< HEAD
+createRestaurantHTML = (restaurant, tabIndex) => {
+        const li = document.createElement('li');
+
+        const image = document.createElement('img');
+        image.className = 'restaurant-img';
+        image.src = DBHelper.imageUrlForRestaurant(restaurant);
+        image.alt = restaurant.name + ' Main Image';
+        li.append(image);
+
+        const name = document.createElement('h1');
+        name.innerHTML = restaurant.name;
+        li.append(name);
+
+        const neighborhood = document.createElement('p');
+        neighborhood.innerHTML = restaurant.neighborhood;
+        li.append(neighborhood);
+
+        const address = document.createElement('p');
+        address.innerHTML = restaurant.address;
+        li.append(address);
+
+        const more = document.createElement('a');
+        more.innerHTML = 'View Details';
+        more.setAttribute('tabindex', tabIndex.toString());
+        more.setAttribute('aria-label', 'View Details for ' + restaurant.name);
+        more.href = DBHelper.urlForRestaurant(restaurant);
+        li.append(more)
+
+        return li
+    }
+    /**
+     * Add markers for current restaurants to the map.
+     */
+addMarkersToMap = (restaurants = self.restaurants) => {
+        restaurants.forEach(restaurant => {
+            // Add marker to the map
+            const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
+            marker.on("click", onClick);
+
+            function onClick() {
+                window.location.href = marker.options.url;
+            }
+            self.markers.push(marker);
+        });
+
+=======
 createRestaurantHTML = (restaurant) => {
     const li = document.createElement('li');
 
@@ -198,6 +245,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
             self.markers.push(marker);
         });
 
+>>>>>>> 568ee003872739bbd0a861c5a314d7216122d9c8
     }
     /* addMarkersToMap = (restaurants = self.restaurants) => {
       restaurants.forEach(restaurant => {
