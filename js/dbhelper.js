@@ -75,11 +75,7 @@ class DBHelper {
             if (error) {
                 callback(error, null);
             } else {
-<<<<<<< HEAD
                 // Filter restaurants to have only given neighborhood
-=======
-                /// Filter restaurants to have only given neighborhood
->>>>>>> 568ee003872739bbd0a861c5a314d7216122d9c8
                 const results = restaurants.filter(r => r.neighborhood == neighborhood);
                 callback(null, results);
             }
