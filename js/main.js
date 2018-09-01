@@ -145,9 +145,11 @@ resetRestaurants = (restaurants) => {
  * Create all restaurants HTML and add them to the webpage.
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
+    let tabIndex = 3;
     const ul = document.getElementById('restaurants-list');
     restaurants.forEach(restaurant => {
-        ul.append(createRestaurantHTML(restaurant));
+        ul.append(createRestaurantHTML(restaurant, tabIndex));
+        tabIndex++;
     });
     addMarkersToMap();
 }
@@ -182,6 +184,7 @@ createRestaurantHTML = (restaurant, tabIndex) => {
         more.setAttribute('aria-label', 'View Details for ' + restaurant.name);
         more.href = DBHelper.urlForRestaurant(restaurant);
         li.append(more)
+
 
         return li
     }
